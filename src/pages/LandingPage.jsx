@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import BrownButton from "../components/BrownButton";
 import ToolCard from "../components/ToolCard";
 import BottomLineInupt from "../components/BottomLineInput";
 
 const LandingPage = () =>{
+    const navigate = useNavigate();
+
     const LogoImg = "https://img.icons8.com/?size=100&id=6AxLGGiKDNdm&format=png&color=a8c604";
 
     const [tools, setTools] = useState([
@@ -62,7 +64,7 @@ const LandingPage = () =>{
                             <BottomLineInupt value={pwd} type={"password"} setValue={(val)=>{setPwd(val)}} />
                         </div>
                         <div className=" mt-10 w-2/3">
-                            <BrownButton text={"Log In"} func={()=>{}} />
+                            <BrownButton text={"Log In"} func={()=>{navigate("/main/tools")}} />
                         </div>
                         <div className=" mt-16 mb-10 w-full flex justify-around text-sm">
                             <NavLink onClick={()=>{}}>Forgot password</NavLink>
