@@ -5,7 +5,8 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+    },
     colors:{
       green:"#98b912",
       brown: "#b29063",
