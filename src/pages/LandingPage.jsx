@@ -19,7 +19,7 @@ const LandingPage = () =>{
         {img:"https://img.icons8.com/?size=100&id=8818&format=png&color=14203a", title:"Facebook video downloader", isNew:false, num:675},
         {img:"https://img.icons8.com/?size=100&id=53433&format=png&color=14203a", title:"Image background remover", isNew:false, num:675}
     ])
-    const [currentState, setCurrentState] = useState(2);
+    const [currentState, setCurrentState] = useState(0);
     const [userName, setUserName] = useState("");
     const [pwd, setPwd] = useState("");
     const [cPwd, setCPwd] = useState("");
