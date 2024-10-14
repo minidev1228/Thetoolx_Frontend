@@ -23,6 +23,8 @@ const LandingPage = () =>{
     const [userName, setUserName] = useState("");
     const [pwd, setPwd] = useState("");
     const [cPwd, setCPwd] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
 
     return (
         <>
@@ -62,10 +64,13 @@ const LandingPage = () =>{
                         <div className=" mt-10 w-2/3">
                             <BrownButton text={"Log In"} func={()=>{}} />
                         </div>
-                        <NavLink className=" mt-10 mb-10" onClick={()=>{setCurrentState(2)}}>Sign Up</NavLink>
+                        <div className=" mt-16 mb-10 w-full flex justify-around text-sm">
+                            <NavLink onClick={()=>{}}>Forgot password</NavLink>
+                            <NavLink onClick={()=>{setCurrentState(2)}}>Sign Up</NavLink>
+                        </div>
                         <div className=" w-full bg-dark h-1"></div>
                     </div>
-                </div> : <div className="w-full h-screen flex items-center pt-20 flex-col">
+                </div> : <div className="w-full h-min[100vh] mb-10 flex items-center pt-20 flex-col">
                     <div className="w-80 bg-realWhite h-auto pt-20 items-center flex flex-col relative">
                         <NavLink className=" top-5 left-5 absolute flex justify-center items-center text-sm" onClick={()=>{setCurrentState(0)}}> <img src="https://img.icons8.com/?size=100&id=40217&format=png&color=14203a" className=" size-3 mr-1" alt="" /> Go Home</NavLink>
                         <div className="absolute right-5 top-5">
@@ -74,6 +79,14 @@ const LandingPage = () =>{
                         <div className=" w-2/3 text-sm mt-10">
                             <label htmlFor="user_name">User Name :</label>
                             <BottomLineInupt value={userName} type={"text"} setValue={(val)=>{setUserName(val)}} />
+                        </div>
+                        <div className=" w-2/3 text-sm mt-10">
+                            <label htmlFor="email">Email :</label>
+                            <BottomLineInupt value={email} type={"email"} setValue={(val)=>{setEmail(val)}} />
+                        </div>
+                        <div className=" w-2/3 text-sm mt-10">
+                            <label htmlFor="phone">Phone :</label>
+                            <BottomLineInupt value={phone} type={"phone"} setValue={(val)=>{setPhone(val)}} />
                         </div>
                         <div className=" w-2/3 text-sm mt-10">
                             <label htmlFor="pwd1">Password :</label>
