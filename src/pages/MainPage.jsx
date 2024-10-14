@@ -45,7 +45,7 @@ const MainPage = ({children}) =>{
                         isProfileDown ? <div onMouseEnter={()=>{setIsProfileDown(true)}} onMouseLeave={()=>{setIsProfileDown(false)}} className=" absolute z-20 top-6 shadow-xl text-sm right-0  w-36 bg-realWhite">
                             <button onClick={()=>{navigate("/main/my-profile")}} className="w-full text-dark h-12 text-center text-start p-3 flex flex-row items-center hover:bg-hover"> 
                                 <img src="https://img.icons8.com/?size=100&id=33901&format=png&color=14203a" className=" size-5 mr-3" alt="" /><p>View Profile</p></button>
-                            <button className="w-full text-dark h-12 text-center text-start p-3 flex flex-row items-center hover:bg-hover"> <img src="https://img.icons8.com/?size=100&id=26217&format=png&color=14203a" className=" size-5 mr-3" alt="" /> <p>Log Out</p></button>
+                            <button className="w-full text-dark h-12 text-center text-start p-3 flex flex-row items-center hover:bg-hover" onClick={()=>{navigate("/")}}> <img src="https://img.icons8.com/?size=100&id=26217&format=png&color=14203a" className=" size-5 mr-3" alt="" /> <p>Log Out</p></button>
                         </div> : <></>
                     }
                     <img src="https://img.icons8.com/?size=100&id=8113&format=png&color=FFFFFF" onMouseEnter={()=>{setIsMenuShown(true)}} onMouseLeave={()=>{setIsMenuShown(false)}} className=" size-5 cursor-pointer ml-5 block sm:hidden" alt="" />
