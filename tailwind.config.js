@@ -13,7 +13,8 @@ export default {
       dark: "#14203a",
       orange: "#e08611",
       white: "#f0ede8",
-      realWhite: "#ffffff"
+      realWhite: "#ffffff",
+      hover: "#ded2c2"
     }
   },
   plugins: [],

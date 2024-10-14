@@ -16,17 +16,29 @@ const MainPage = ({children}) =>{
                 <h1 className=" text-green text-xl  ">TheToolX.com</h1>
                 <div className="flex-grow">&nbsp;</div>
                 <div className=" flex flex-row text-realWhite items-center relative">
-                    <div className=" mr-5">
-                        <button className=" flex flex-row items-center justify-between"><p className=" mr-2">Favorites</p><img src="https://img.icons8.com/?size=100&id=37319&format=png&color=FFFFFF" className=" size-5" alt="" /></button>
+                    <div className=" mr-5 relative">
+                        <button onMouseEnter={()=>{setIsFavDown(true)}} onMouseLeave={()=>{setIsFavDown(false)}} className=" flex flex-row items-center justify-between"><p className=" mr-2">Favorites</p><img src="https://img.icons8.com/?size=100&id=37319&format=png&color=FFFFFF" className=" size-5" alt="" /></button>
+                        {
+                            isFavDown ? <div onMouseEnter={()=>{setIsFavDown(true)}} onMouseLeave={()=>{setIsFavDown(false)}} className=" absolute top-6 shadow-xl right-0 text-sm  w-40 bg-realWhite">
+                                <button className="w-full text-dark h-12 text-center text-start p-3 flex flex-row items-center hover:bg-hover"> <img src="https://img.icons8.com/?size=100&id=123441&format=png&color=14203a" className=" size-5 mr-3" alt="" /><p>Saved Tools</p></button>
+                                <button className="w-full text-dark h-12 text-center text-start p-3 flex flex-row items-center hover:bg-hover"> <img src="https://img.icons8.com/?size=100&id=10058&format=png&color=14203a" className=" size-5 mr-3" alt="" /> <p>Activity History</p></button>
+                            </div> : <></>
+                        }
                     </div>
-                    <div className=" mr-10">
-                    <button className=" flex flex-row items-center justify-between"><p className=" mr-2">Community</p><img src="https://img.icons8.com/?size=100&id=37319&format=png&color=FFFFFF" className=" size-5" alt="" /></button>
+                    <div className=" mr-10 relative">
+                        <button onMouseEnter={()=>{setIsCommunityDown(true)}} onMouseLeave={()=>{setIsCommunityDown(false)}} className=" flex flex-row items-center justify-between"><p className=" mr-2">Community</p><img src="https://img.icons8.com/?size=100&id=37319&format=png&color=FFFFFF" className=" size-5" alt="" /></button>
+                        {
+                            isCommunityDown ? <div onMouseEnter={()=>{setIsCommunityDown(true)}} onMouseLeave={()=>{setIsCommunityDown(false)}} className=" absolute top-6 shadow-xl right-0 text-sm  w-28 bg-realWhite">
+                                <button className="w-full text-dark h-12 text-center text-start p-3 flex flex-row items-center hover:bg-hover"> <img src="https://img.icons8.com/?size=100&id=11220&format=png&color=14203a" className=" size-5 mr-3" alt="" /><p>Users</p></button>
+                                <button className="w-full text-dark h-12 text-center text-start p-3 flex flex-row items-center hover:bg-hover"> <img src="https://img.icons8.com/?size=100&id=54386&format=png&color=14203a" className=" size-5 mr-3" alt="" /> <p>Forum</p></button>
+                            </div> : <></>
+                        }
                     </div>
                     <img src={Avartar} className="size-10 rounded-full cursor-pointer" alt="" onMouseEnter={()=>{setIsProfileDown(true)}} onMouseLeave={()=>{setIsProfileDown(false)}} />
                     {
-                        isProfileDown ? <div onMouseEnter={()=>{setIsProfileDown(true)}} onMouseLeave={()=>{setIsProfileDown(false)}} className=" absolute top-5 right-5 h-52 w-36 bg-realWhite">
-                            <button>View Profile</button>
-                            <button>Log out</button>
+                        isProfileDown ? <div onMouseEnter={()=>{setIsProfileDown(true)}} onMouseLeave={()=>{setIsProfileDown(false)}} className=" absolute top-6 shadow-xl text-sm right-0  w-36 bg-realWhite">
+                            <button className="w-full text-dark h-12 text-center text-start p-3 flex flex-row items-center hover:bg-hover"> <img src="https://img.icons8.com/?size=100&id=33901&format=png&color=14203a" className=" size-5 mr-3" alt="" /><p>View Profile</p></button>
+                            <button className="w-full text-dark h-12 text-center text-start p-3 flex flex-row items-center hover:bg-hover"> <img src="https://img.icons8.com/?size=100&id=26217&format=png&color=14203a" className=" size-5 mr-3" alt="" /> <p>Log Out</p></button>
                         </div> : <></>
                     }
                 </div>
