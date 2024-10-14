@@ -44,7 +44,7 @@ const LandingPage = () =>{
                         <h1 className=" text-3xl font-extrabold mb-4">Web Apps by TheToolX</h1>
                         <p style={{color:"#14203a82"}}>Download, Calculator, Test, Find</p>
                     </div>
-                    <div className="w-full flex flex-wrap mt-10">
+                    <div className="w-full flex flex-wrap mt-10 justify-center">
                         {
                             tools.map((tool, id)=><ToolCard key={id} img={tool.img} title={tool.title} num={tool.num} isNew={tool.isNew} />)
                         }
