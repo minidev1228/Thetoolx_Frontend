@@ -3,10 +3,10 @@ import React from "react";
 import MainPage from "./MainPage";
 import BrownButton from "../components/BrownButton";
 
-import ProfileBackground from "../assets/profile_background/2.jfif"
-import MyImg from "../assets/avartar.png"
+import ProfileBackground from "../assets/profile_background/3.jfif"
+import MyImg from "../assets/users/user2.jpg"
 
-const MyProfilePage = () =>{
+const UsreProfilePage = () =>{
     return (
         <MainPage>
             <div style={{minHeight:"calc(100vh - 7.5rem)"}} className=" w-screen box-border p-12">
@@ -17,18 +17,18 @@ const MyProfilePage = () =>{
                             <div className="rounded-full mb-5 h-28 w-28 overflow-hidden">
                                 <img src={MyImg} alt="" />
                             </div>
-                            {/* <img src={MyImg} className="size-28 rounded-full mb-5" alt="" /> */}
                             <div className=" flex flex-row justify-center items-center">
-                                <h1 className=" text-lg font-extrabold mr-2">John Smith</h1>
+                                <h1 className=" text-lg font-extrabold mr-2">Akira Ito</h1>
                                 <img src="https://img.icons8.com/?size=100&id=poVlgAcqxww6&format=png&color=4295fd" className=" size-5" alt="" />
                             </div>
-                            <p className=" text-xs">CMO at SingleFire</p>
+                            <p className=" text-xs">Video Editor</p>
                         </div>
                     </div>
                     <div className=" w-full bg-realWhite h-64 p-5 rounded-lg overflow-hidden sm:ml-5 sm:w-1/2 md:w-1/3">
                         <h3 style={{borderBottom:"1px solid #80808040"}} className=" pb-5 mb-5">Intro</h3>
                         <div>
                         <div className=" flex flex-row mb-5">
+                                <div></div>
                                 <img src="https://img.icons8.com/?size=100&id=2784&format=png&color=14203a" className=" size-5 mr-2" alt="" />
                                 <p>CMO at SingleFire</p>
                             </div>
@@ -42,7 +42,7 @@ const MyProfilePage = () =>{
                             </div>
                             <div className=" flex flex-row mb-5">
                                 <img src="https://img.icons8.com/?size=100&id=7880&format=png&color=14203a" className=" size-5 mr-2"  alt="" />
-                                <p>Delhi , India</p>
+                                <p>Tokyo , Japan</p>
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@ I am an accomplished full-stack developer with over 11 years of experience in de
                 </div>
                 <div className=" w-full flex flex-row">
                     <div className=" w-20 mt-5">
-                        <BrownButton text={"Edit"} func={()=>{}} />
+                        <BrownButton text={"Follow"} func={()=>{}} />
                     </div>
                     <div className=" flex-grow">
                         &nbsp;
@@ -73,4 +73,4 @@ I am an accomplished full-stack developer with over 11 years of experience in de
     )
 }
 
-export default MyProfilePage
+export default UsreProfilePage

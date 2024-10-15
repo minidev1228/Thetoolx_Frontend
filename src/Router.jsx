@@ -9,6 +9,7 @@ import UsersPage from './pages/UsersPage';
 import ForumPage from "./pages/ForumPage"
 import SavedToolPage from "./pages/SavedToolPage"
 import ActivityHistoryPage from "./pages/ActivityHistoryPage"
+import UsreProfilePage from './pages/UserProfilePage';
 
 const Router = () =>{
   return (
@@ -22,6 +23,7 @@ const Router = () =>{
           <Route path='forum' element={<ForumPage />} />
           <Route path='saved_tool_page' element={<SavedToolPage />} />
           <Route path='activity_history' element={<ActivityHistoryPage />} />
+          <Route path='user_profile' element={<UsreProfilePage />} />
         </Route>
       </Routes>
     </BrowserRouter>

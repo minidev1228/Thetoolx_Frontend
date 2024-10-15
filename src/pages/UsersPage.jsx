@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import MainPage from "./MainPage";
 import UserCard from "../components/UserCard";
 
 const UsersPage = () =>{
+    const navigate = useNavigate();
 
     const [users, setUsers] = useState([
         {profile: "/src/assets/users/user2.jpg", name: "Akira Ito", job: "Video Editor", isVerified:true},
@@ -18,7 +20,7 @@ const UsersPage = () =>{
             <div className=" w-screen p-10" style={{minHeight:"calc(100vh - 7.5rem)"}}>
                 <div className=" flex flex-wrap justify-center">
                     {
-                        users.map((user, key)=><UserCard key={key} userProfile={user.profile} name={user.name} job={user.job} isVerified={user.isVerified}/>)
+                        users.map((user, key)=><UserCard key={key} userProfile={user.profile} name={user.name} job={user.job} isVerified={user.isVerified} func={()=>{navigate("/main/user_profile")}} />)
                     }
                 </div>
                 <div></div>
