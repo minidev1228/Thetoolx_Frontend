@@ -14,6 +14,7 @@ const ProfileEditModal = ({closeEventHandler}) =>{
     const [phone, setPhone] = useState("");
     const [location, setLocation] = useState("")
 
+    
     return (
         <div className=" w-screen h-screen top-0 left-0 fixed z-50 flex justify-center items-center" style={{backgroundColor:"rgb(37 50 79 / 64%)"}}>
             <div className=" w-full bg-realWhite p-5 max-w-96 pt-12 relative">
