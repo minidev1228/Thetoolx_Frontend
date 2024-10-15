@@ -4,6 +4,7 @@ import MainPage from "./MainPage";
 import BrownButton from "../components/BrownButton";
 import ForumCard from "../components/ForumCard";
 import ChatItem from "../components/ChatItem";
+import PostModal from "../components/PostModal";
 
 const ForumPage = () =>{
 
@@ -48,9 +49,13 @@ const ForumPage = () =>{
     const [selectedTopic, setSelectedTopic] = useState("");
     const [isChatShown, setIsChatShown] = useState(false);
     const [isNavbarShown, setIsNavbarShown] = useState(true);
+    const [isShownPostModal, setIsShownPostModal] = useState(false);
 
     return (
         <MainPage>
+            {
+                isShownPostModal ? <PostModal topics={topics} closeEventHandler={()=>{setIsShownPostModal(false)}} /> : <></>
+            }
             <div className=" w-screen flex relative" style={{height:"calc(100vh - 7.5rem)"}}>
                 {
                     !isNavbarShown ? <button onClick={()=>{setIsNavbarShown(true)}} className=" bg-dark p-2 justify-center items-center text-sm rounded-md absolute top-1 left-1 z-10 flex sm:hidden">
@@ -62,7 +67,7 @@ const ForumPage = () =>{
                         <button onClick={()=>{setIsNavbarShown(false)}} className=" p-2 justify-center items-center text-sm rounded-md absolute top-1 right-1 flex sm:hidden">
                             <img src="https://img.icons8.com/?size=100&id=8112&format=png&color=FFFFFF" className=" size-5" alt="" />
                         </button>
-                        <button className=" w-3/4 h-10 bg-dark mt-10 flex justify-center items-center text-sm rounded-md sm:mt-5">
+                        <button className=" w-3/4 h-10 bg-dark mt-10 flex justify-center items-center text-sm rounded-md sm:mt-5" onClick={()=>{setIsShownPostModal(true)}}>
                             <img src="https://img.icons8.com/?size=100&id=114094&format=png&color=FFFFFF" className=" size-5 pr-1" alt="" />
                             Post
                         </button>
