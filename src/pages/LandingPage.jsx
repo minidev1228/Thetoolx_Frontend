@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import BrownButton from "../components/BrownButton";
 import ToolCard from "../components/ToolCard";
 import BottomLineInupt from "../components/BottomLineInput";
+import IconInputField from "../components/IconInputField";
 
 const LandingPage = () =>{
     const navigate = useNavigate();
@@ -27,6 +28,7 @@ const LandingPage = () =>{
     const [cPwd, setCPwd] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
+    const [location, setLocation] = useState("")
 
     return (
         <>
@@ -50,18 +52,13 @@ const LandingPage = () =>{
                         }
                     </div>
                 </div> : currentState === 1 ? <div className="w-full h-screen flex items-center pt-20 flex-col">
-                    <div className="w-80 bg-realWhite h-auto pt-20 items-center flex flex-col relative">
-                        <NavLink className=" top-5 left-5 absolute flex justify-center items-center text-sm" onClick={()=>{setCurrentState(0)}}> <img src="https://img.icons8.com/?size=100&id=40217&format=png&color=14203a" className=" size-3 mr-1" alt="" /> Go Home</NavLink>
-                        <div className=" absolute right-5 top-5">
-                            <h1>Log In</h1>
+                    <div className="w-80 bg-realWhite h-auto pt-5 items-center flex flex-col relative">
+                        <img src={LogoImg} className=" size-14" alt="" />
+                        <div className=" w-2/3 text-sm mt-10">
+                            <IconInputField placholder={"Name"} type={"text"} img={"https://img.icons8.com/?size=100&id=23265&format=png&color=FFFFFF"} setValue={(val)=>{setUserName(val)}} value={userName} />
                         </div>
                         <div className=" w-2/3 text-sm mt-10">
-                            <label htmlFor="user_name">User Name :</label>
-                            <BottomLineInupt value={userName} type={"text"} setValue={(val)=>{setUserName(val)}} />
-                        </div>
-                        <div className=" w-2/3 text-sm mt-10">
-                            <label htmlFor="user_name">Password :</label>
-                            <BottomLineInupt value={pwd} type={"password"} setValue={(val)=>{setPwd(val)}} />
+                            <IconInputField placholder={"Password"} type={"password"} img={"https://img.icons8.com/?size=100&id=10575&format=png&color=FFFFFF"} setValue={(val)=>{setPwd(val)}} value={pwd} />
                         </div>
                         <div className=" mt-10 w-2/3">
                             <BrownButton text={"Log In"} func={()=>{navigate("/main/tools")}} />
@@ -73,30 +70,25 @@ const LandingPage = () =>{
                         <div className=" w-full bg-dark h-1"></div>
                     </div>
                 </div> : <div className="w-full h-min[100vh] mb-10 flex items-center pt-20 flex-col">
-                    <div className="w-80 bg-realWhite h-auto pt-20 items-center flex flex-col relative">
-                        <NavLink className=" top-5 left-5 absolute flex justify-center items-center text-sm" onClick={()=>{setCurrentState(0)}}> <img src="https://img.icons8.com/?size=100&id=40217&format=png&color=14203a" className=" size-3 mr-1" alt="" /> Go Home</NavLink>
-                        <div className="absolute right-5 top-5">
-                            <h1>Sign Up</h1>
+                    <div className="w-80 bg-realWhite h-auto pt-5 items-center flex flex-col relative">
+                        <img src={LogoImg} className=" size-14" alt="" />
+                        <div className=" w-2/3 text-sm mt-10">
+                            <IconInputField placholder={"Name"} type={"text"} img={"https://img.icons8.com/?size=100&id=23265&format=png&color=FFFFFF"} setValue={(val)=>{setUserName(val)}} value={userName} />
                         </div>
                         <div className=" w-2/3 text-sm mt-10">
-                            <label htmlFor="user_name">User Name :</label>
-                            <BottomLineInupt value={userName} type={"text"} setValue={(val)=>{setUserName(val)}} />
+                            <IconInputField placholder={"Email"} type={"email"} img={"https://img.icons8.com/?size=100&id=2848&format=png&color=FFFFFF"} setValue={(val)=>{setEmail(val)}} value={email} />
                         </div>
                         <div className=" w-2/3 text-sm mt-10">
-                            <label htmlFor="email">Email :</label>
-                            <BottomLineInupt value={email} type={"email"} setValue={(val)=>{setEmail(val)}} />
+                           <IconInputField placholder={"Phone Number"} type={"phone"} img={"https://img.icons8.com/?size=100&id=9730&format=png&color=FFFFFF"} setValue={(val)=>{setPhone(val)}} value={phone} />
                         </div>
                         <div className=" w-2/3 text-sm mt-10">
-                            <label htmlFor="phone">Phone :</label>
-                            <BottomLineInupt value={phone} type={"phone"} setValue={(val)=>{setPhone(val)}} />
+                           <IconInputField placholder={"Location"} type={"text"} img={"https://img.icons8.com/?size=100&id=7880&format=png&color=FFFFFF"} setValue={(val)=>{setLocation(val)}} value={location} />
                         </div>
                         <div className=" w-2/3 text-sm mt-10">
-                            <label htmlFor="pwd1">Password :</label>
-                            <BottomLineInupt value={pwd} type={"password"} setValue={(val)=>{setPwd(val)}} />
+                            <IconInputField placholder={"Password"} type={"password"} img={"https://img.icons8.com/?size=100&id=10575&format=png&color=FFFFFF"} setValue={(val)=>{setPwd(val)}} value={pwd} />
                         </div>
                         <div className=" w-2/3 text-sm mt-10">
-                            <label htmlFor="pwd2">Password Confirm :</label>
-                            <BottomLineInupt value={cPwd} type={"password"} setValue={(val)=>{setCPwd(val)}} />
+                            <IconInputField placholder={"Password Confirm"} type={"password"} img={"https://img.icons8.com/?size=100&id=11371&format=png&color=FFFFFF"} setValue={(val)=>{setCPwd(val)}} value={cPwd} />
                         </div>
                         <div className=" mt-10 w-2/3">
                             <BrownButton text={"Sign Up"} func={()=>{}} />
