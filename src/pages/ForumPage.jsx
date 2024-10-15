@@ -76,7 +76,7 @@ const ForumPage = () =>{
                         </div>
                     </div> : <></>
                 }
-                <div className=" flex-grow h-full p-5 flex flex-wrap overflow-y-auto">
+                <div className=" flex-grow h-full p-5 flex flex-wrap overflow-y-auto justify-center">
                     {
                         posts.map(post=><ForumCard func={()=>{setIsChatShown(true)}} content={post.content} title={post.title} date={post.date} num={post.num} />)
                     }
