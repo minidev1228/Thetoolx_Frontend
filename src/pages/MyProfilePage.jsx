@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 import MainPage from "./MainPage";
 import BrownButton from "../components/BrownButton";
+import ProfileEditModal from "../components/ProfileEditModal";
 
 import ProfileBackground from "../assets/profile_background/2.jfif"
 import MyImg from "../assets/avartar.png"
 
 const MyProfilePage = () =>{
+
+    const [isEditModalShown, setIsEditModalShown] = useState(false);
+
     return (
         <MainPage>
+            {
+                isEditModalShown ? <ProfileEditModal closeEventHandler={()=>{setIsEditModalShown(false)}} /> : <></>
+            }
             <div style={{minHeight:"calc(100vh - 7.5rem)"}} className=" w-screen box-border p-12">
                 <div className="flex flex-col sm:flex-row">
                     <div className=" w-full bg-realWhite h-64 rounded-lg overflow-hidden relative mb-5 sm:w-1/2 md:w-2/3">
@@ -56,7 +63,7 @@ I am an accomplished full-stack developer with over 11 years of experience in de
                 </div>
                 <div className=" w-full flex flex-row">
                     <div className=" w-20 mt-5">
-                        <BrownButton text={"Edit"} func={()=>{}} />
+                        <BrownButton text={"Edit"} func={()=>{setIsEditModalShown(true)}} />
                     </div>
                     <div className=" flex-grow">
                         &nbsp;
