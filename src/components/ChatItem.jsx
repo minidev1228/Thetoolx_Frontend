@@ -1,10 +1,10 @@
 import React from "react";
 
-const ChatItem = ({pic, name, date, content}) =>{
+const ChatItem = ({pic, name, date, content, func}) =>{
     return (
         <div className=" w-full max-w-96 bg-realWhite mt-3 rounded-md flex flex-row">
             <div className="text-sm p-2 flex flex-col justify-center items-center">
-                <div className=" h-12 w-12 bg-brown rounded-full mb-1 mt-1 ml-1 overflow-hidden">
+                <div className=" h-12 w-12 bg-brown rounded-full mb-1 mt-1 ml-1 overflow-hidden cursor-pointer" onClick={func}>
                     <img src={pic} alt="" />
                 </div>
                 <p style={{fontSize:"11px", textAlign:"center"}}>{name}</p>

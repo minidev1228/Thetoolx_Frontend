@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import MainPage from "./MainPage";
 import BrownButton from "../components/BrownButton";
@@ -7,6 +8,8 @@ import ChatItem from "../components/ChatItem";
 import PostModal from "../components/PostModal";
 
 const ForumPage = () =>{
+
+    const navigate = useNavigate();
 
     const [topics, setTopics] = useState(
         [
@@ -90,7 +93,7 @@ const ForumPage = () =>{
                     isChatShown? <div className=" z-40 h-full flex flex-col bg-realWhite chat-field w-full absolute right-0" style={{maxWidth:"500px"}}>
                     <div className="w-full flex-grow overflow-y-auto pb-5 flex items-center flex-col">
                             {
-                                historys.map(history=><ChatItem pic={history.pic} name={history.name} content={history.content} date={history.date} />)
+                                historys.map(history=><ChatItem pic={history.pic} func={()=>{navigate("/main/user_profile")}} name={history.name} content={history.content} date={history.date} />)
                             }
                         </div>
                         <div className=" bottom-0 w-full p-2 bg-realWhite">
