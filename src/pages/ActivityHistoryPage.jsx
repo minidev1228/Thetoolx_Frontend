@@ -15,7 +15,7 @@ const ActivityHistoryPage = () =>{
     ];
     return (
         <MainPage>
-            <div className=" w-screen p-10 relative pt-16" style={{minHeight:"calc(100vh - 10rem)"}}>
+            <div className=" w-screen p-10 relative pt-16" style={{minHeight:"calc(100vh - 7.5rem)"}}>
                 <div className=" w-16 absolute top-5 right-20">
                     <IconBrownButton func={()=>{}} icon={"https://img.icons8.com/?size=100&id=45964&format=png&color=FFFFFF"} text={"Download"} />
                 </div>

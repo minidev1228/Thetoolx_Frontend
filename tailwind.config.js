@@ -11,6 +11,7 @@ export default {
       green:"#98b912",
       brown: "#b29063",
       dark: "#14203a",
+      light_dark:"#25324f",
       orange: "#e08611",
       white: "#f0ede8",
       realWhite: "#ffffff",

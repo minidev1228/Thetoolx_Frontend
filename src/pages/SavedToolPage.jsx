@@ -12,7 +12,7 @@ const SavedToolPage = () =>{
 
     return (
         <MainPage>
-            <div className=" w-full pl-10 pt-10 pr-10 mt-10"  style={{minHeight:"calc(100vh - 10rem)"}}>
+            <div className=" w-full pl-10 pt-10 pr-10 mt-10"  style={{minHeight:"calc(100vh - 7.5rem)"}}>
                 <div className="w-full flex flex-wrap mt-10 justify-center">
                     {
                         tools.map((tool, id)=><ToolCard key={id} img={tool.img} title={tool.title} num={tool.num} isNew={tool.isNew} />)

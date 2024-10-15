@@ -8,3 +8,27 @@
   background-color: #f0ede8;
   overflow: hidden;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #e08611; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.chat-field{
+  background-image: url(./assets/chat_backgrounds/chat_background2.jpg);
+}

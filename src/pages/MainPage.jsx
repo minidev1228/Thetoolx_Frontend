@@ -88,7 +88,7 @@ const MainPage = ({children}) =>{
                 </div>
             </div>
             {children}
-            <div className="w-screen h-20 bg-dark text-realWhite flex flex-row-reverse pr-20 items-center italic text-sm">
+            <div className="w-screen h-10 bg-dark text-realWhite flex flex-row-reverse pr-20 items-center italic text-sm">
                 <p>Web Apps by TheToolX</p>
             </div>
         </>

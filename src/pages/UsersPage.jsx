@@ -15,7 +15,7 @@ const UsersPage = () =>{
 
     return (
         <MainPage>
-            <div className=" w-screen p-10" style={{minHeight:"calc(100vh - 10rem)"}}>
+            <div className=" w-screen p-10" style={{minHeight:"calc(100vh - 7.5rem)"}}>
                 <div className=" flex flex-wrap justify-center">
                     {
                         users.map((user, key)=><UserCard key={key} userProfile={user.profile} name={user.name} job={user.job} isVerified={user.isVerified}/>)

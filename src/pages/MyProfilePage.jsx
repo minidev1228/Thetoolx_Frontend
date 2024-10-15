@@ -9,7 +9,7 @@ import MyImg from "../assets/avartar.png"
 const MyProfilePage = () =>{
     return (
         <MainPage>
-            <div style={{minHeight:"calc(100vh - 10rem)"}} className=" w-screen box-border p-12">
+            <div style={{minHeight:"calc(100vh - 7.5rem)"}} className=" w-screen box-border p-12">
                 <div className="flex flex-col sm:flex-row">
                     <div className=" w-full bg-realWhite h-64 rounded-lg overflow-hidden relative mb-5 sm:w-1/2 md:w-2/3">
                         <img src={ProfileBackground} className=" w-full h-28" alt="" />
@@ -51,8 +51,19 @@ I am an accomplished full-stack developer with over 11 years of experience in de
 🤝 Let’s work together!
                     </p>
                 </div>
-                <div className=" w-20 mt-5">
-                    <BrownButton text={"Edit"} func={()=>{}} />
+                <div className=" w-full flex flex-row">
+                    <div className=" w-20 mt-5">
+                        <BrownButton text={"Edit"} func={()=>{}} />
+                    </div>
+                    <div className=" flex-grow">
+                        &nbsp;
+                    </div>
+                    <div className=" w-min-[5] mt-5 bg-realWhite flex flex-row justify-center items-center pl-2 pr-2 text-sm">
+                        <span className=" mr-1">Follower: </span>
+                        <p className="">1220&nbsp;&nbsp;</p>
+                        <span>/&nbsp;&nbsp;Following: </span>
+                        <p>1220</p>
+                    </div>
                 </div>
             </div>
         </MainPage>
