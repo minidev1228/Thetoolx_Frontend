@@ -25,7 +25,7 @@ const MainPage = ({children}) =>{
                     <div className=" mr-5 relative hidden sm:block">
                         <button onMouseEnter={()=>{setIsFavDown(true)}} onMouseLeave={()=>{setIsFavDown(false)}} className=" flex flex-row items-center justify-between"><p className=" mr-2">Favorites</p><img src="https://img.icons8.com/?size=100&id=37319&format=png&color=FFFFFF" className=" size-5" alt="" /></button>
                         {
-                            isFavDown ? <div onMouseEnter={()=>{setIsFavDown(true)}} onMouseLeave={()=>{setIsFavDown(false)}} className=" absolute top-6 shadow-xl right-0 text-sm  w-40 bg-realWhite z-20">
+                            isFavDown ? <div onMouseEnter={()=>{setIsFavDown(true)}} onMouseLeave={()=>{setIsFavDown(false)}} className=" absolute top-6 shadow-xl right-0 text-sm  w-40 bg-realWhite z-50">
                                 <button className="w-full text-dark h-12 text-center text-start p-3 flex flex-row items-center hover:bg-hover" onClick={()=>{navigate("/main/saved_tool_page")}}> <img src="https://img.icons8.com/?size=100&id=123441&format=png&color=14203a" className=" size-5 mr-3" alt="" /><p>Saved Tools</p></button>
                                 <button className="w-full text-dark h-12 text-center text-start p-3 flex flex-row items-center hover:bg-hover" onClick={()=>{navigate("/main/activity_history")}}> <img src="https://img.icons8.com/?size=100&id=10058&format=png&color=14203a" className=" size-5 mr-3" alt="" /> <p>Activity History</p></button>
                             </div> : <></>
@@ -34,7 +34,7 @@ const MainPage = ({children}) =>{
                     <div className=" mr-10 relative hidden sm:block">
                         <button onMouseEnter={()=>{setIsCommunityDown(true)}} onMouseLeave={()=>{setIsCommunityDown(false)}} className=" flex flex-row items-center justify-between"><p className=" mr-2">Community</p><img src="https://img.icons8.com/?size=100&id=37319&format=png&color=FFFFFF" className=" size-5" alt="" /></button>
                         {
-                            isCommunityDown ? <div onMouseEnter={()=>{setIsCommunityDown(true)}} onMouseLeave={()=>{setIsCommunityDown(false)}} className=" absolute top-6 z-20 shadow-xl right-0 text-sm  w-28 bg-realWhite">
+                            isCommunityDown ? <div onMouseEnter={()=>{setIsCommunityDown(true)}} onMouseLeave={()=>{setIsCommunityDown(false)}} className=" absolute top-6 z-50 shadow-xl right-0 text-sm  w-28 bg-realWhite">
                                 <button onClick={()=>{navigate("/main/users")}} className="w-full text-dark h-12 text-center text-start p-3 flex flex-row items-center hover:bg-hover"> <img src="https://img.icons8.com/?size=100&id=11220&format=png&color=14203a" className=" size-5 mr-3" alt="" /><p>Users</p></button>
                                 <button className="w-full text-dark h-12 text-center text-start p-3 flex flex-row items-center hover:bg-hover" onClick={()=>{navigate("/main/forum")}}> <img src="https://img.icons8.com/?size=100&id=54386&format=png&color=14203a" className=" size-5 mr-3" alt="" /> <p>Forum</p></button>
                             </div> : <></>
@@ -74,7 +74,7 @@ const MainPage = ({children}) =>{
                         </div> : <></>
                     }
                     {
-                        isMenuShown ? <div onMouseEnter={()=>{setIsMenuShown(true)}} onMouseLeave={()=>{setIsMenuShown(false)}} className=" absolute top-6 shadow-xl text-sm right-0  w-36 z-10 bg-realWhite"> 
+                        isMenuShown ? <div onMouseEnter={()=>{setIsMenuShown(true)}} onMouseLeave={()=>{setIsMenuShown(false)}} className=" absolute top-6 shadow-xl text-sm right-0  w-36 z-50 bg-realWhite"> 
                             <button onMouseEnter={()=>{setIsFavMenuShown(true)}} onMouseLeave={()=>{setIsFavMenuShown(false)}} className="w-full text-dark h-12 text-center text-start p-3 flex flex-row items-center hover:bg-hover"> 
                                 <img src="https://img.icons8.com/?size=100&id=9438&format=png&color=14203a" className=" size-5 mr-3" alt="" />
                                 <p>Favorites</p>
