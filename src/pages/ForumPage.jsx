@@ -47,34 +47,42 @@ const ForumPage = () =>{
     ])
     const [selectedTopic, setSelectedTopic] = useState("");
     const [isChatShown, setIsChatShown] = useState(false);
+    const [isNavbarShown, setIsNavbarShown] = useState(true);
 
     return (
         <MainPage>
             <div className=" w-screen flex relative" style={{height:"calc(100vh - 7.5rem)"}}>
-                <div className="h-full w-36 bg-light_dark text-white flex justify-start flex-col items-center relative">
-                    <button className=" p-2 justify-center items-center text-sm rounded-md absolute top-1 right-1 flex sm:hidden">
-                        <img src="https://img.icons8.com/?size=100&id=8112&format=png&color=FFFFFF" className=" size-5" alt="" />
-                    </button>
-                    <button className=" w-3/4 h-10 bg-dark mt-10 flex justify-center items-center text-sm rounded-md sm:mt-5">
-                        <img src="https://img.icons8.com/?size=100&id=114094&format=png&color=FFFFFF" className=" size-5 pr-1" alt="" />
-                        Post
-                    </button>
-                    <div className=" w-full h-full mt-5 overflow-y-auto overflow-x-hidden">
-                        {
-                            topics.map(topic=><button key={topic.name} className="min-h-20 w-full box-border border-solid border-b-2 p-2 border-dark flex justify-start items-center" style={selectedTopic===topic.name?{color:"#98b912"}:{color:"white"}} onClick={()=>{setSelectedTopic(topic.name)}}>
-                                <img src={topic.img} className=" size-5 ml-1" alt="" />
-                                <p className="ml-2">{topic.name}</p>
-                            </button>)
-                        }   
-                    </div>
-                </div>
+                {
+                    !isNavbarShown ? <button onClick={()=>{setIsNavbarShown(true)}} className=" bg-dark p-2 justify-center items-center text-sm rounded-md absolute top-1 left-1 z-10 flex sm:hidden">
+                        <img className=" size-5" src="https://img.icons8.com/?size=100&id=37225&format=png&color=FFFFFF" alt="" />
+                    </button> : <></>
+                }
+                {
+                    isNavbarShown?<div className="h-full absolute sm:relative w-36 bg-light_dark text-white flex justify-start flex-col items-center z-30">
+                        <button onClick={()=>{setIsNavbarShown(false)}} className=" p-2 justify-center items-center text-sm rounded-md absolute top-1 right-1 flex sm:hidden">
+                            <img src="https://img.icons8.com/?size=100&id=8112&format=png&color=FFFFFF" className=" size-5" alt="" />
+                        </button>
+                        <button className=" w-3/4 h-10 bg-dark mt-10 flex justify-center items-center text-sm rounded-md sm:mt-5">
+                            <img src="https://img.icons8.com/?size=100&id=114094&format=png&color=FFFFFF" className=" size-5 pr-1" alt="" />
+                            Post
+                        </button>
+                        <div className=" w-full h-full mt-5 overflow-y-auto overflow-x-hidden">
+                            {
+                                topics.map(topic=><button key={topic.name} className="min-h-20 w-full box-border border-solid border-b-2 p-2 border-dark flex justify-start items-center" style={selectedTopic===topic.name?{color:"#98b912"}:{color:"white"}} onClick={()=>{setSelectedTopic(topic.name)}}>
+                                    <img src={topic.img} className=" size-5 ml-1" alt="" />
+                                    <p className="ml-2">{topic.name}</p>
+                                </button>)
+                            }   
+                        </div>
+                    </div> : <></>
+                }
                 <div className=" flex-grow h-full p-5 flex flex-wrap overflow-y-auto">
                     {
                         posts.map(post=><ForumCard func={()=>{setIsChatShown(true)}} content={post.content} title={post.title} date={post.date} num={post.num} />)
                     }
                 </div>
                 {
-                    isChatShown? <div className="  h-full flex flex-col bg-realWhite chat-field w-full absolute right-0" style={{maxWidth:"500px"}}>
+                    isChatShown? <div className=" z-40 h-full flex flex-col bg-realWhite chat-field w-full absolute right-0" style={{maxWidth:"500px"}}>
                     <div className="w-full flex-grow overflow-y-auto pb-5 flex items-center flex-col">
                             {
                                 historys.map(history=><ChatItem pic={history.pic} name={history.name} content={history.content} date={history.date} />)
@@ -82,7 +90,7 @@ const ForumPage = () =>{
                         </div>
                         <div className=" bottom-0 w-full p-2 bg-realWhite">
                             <textarea name="" id="" className="resize-none p-1 w-full border-brown border-x-2 border-y-2 outline-none" rows="3"></textarea>
-                            <div className=" w-full flex flex-row justify-between pl-5 pr-5">
+                            <div className=" w-full flex flex-row justify-around pl-5 pr-5">
                                 <div className="w-1/6">
                                 <BrownButton text={"Commit"} />
                                 </div>

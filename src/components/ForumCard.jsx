@@ -3,7 +3,7 @@ import DarkButton from "./DarkButton";
 
 const ForumCard = ({title, content, func, date, num}) =>{
     return (
-        <div className=" relative w-80 h-40 bg-brown rounded-lg text-white mr-3">
+        <div className=" relative w-80 h-40 bg-brown rounded-lg text-white mr-3 mt-3">
             <h1 className=" m-4">
                 {title}
             </h1>
