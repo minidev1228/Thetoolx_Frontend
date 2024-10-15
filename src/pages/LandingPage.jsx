@@ -33,8 +33,8 @@ const LandingPage = () =>{
     return (
         <>
             <div className="w-screen h-20 bg-dark flex pl-9 pr-9 items-center">
-                <img src={LogoImg} alt="" className=" size-12 mr-3" />
-                <h1 className=" text-green text-xl  ">TheToolX.com</h1>
+                <img src={LogoImg} alt="" className=" size-12 mr-3 cursor-pointer" onClick={()=>{setCurrentState(0)}} />
+                <h1 className=" text-green text-xl cursor-pointer" onClick={()=>{setCurrentState(0)}}>TheToolX.com</h1>
                 <div className="flex-grow">&nbsp;</div>
                 <div>
                     <BrownButton text={"Log In"} func={()=>{setCurrentState(1)}} />
